@@ -25,7 +25,7 @@ fi
 
 # Add DOTNET_ROOT to PATH if not already present
 if ! grep -q "\$PATH:\$DOTNET_ROOT" "$BASHRC"; then
-    echo "export PATH=\$PATH:\$DOTNET_ROOT:\$DOTNET_ROOT/tools" >> "$BASHRC"
+    echo "export PATH=\$PATH:\$DOTNET_ROOT/bin:\$DOTNET_ROOT/tools" >> "$BASHRC"
 fi
 
 source $HOME/.bashrc
