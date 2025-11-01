@@ -8,9 +8,7 @@ mkdir -p $HOME/Downloads
 curl -fsSL https://dot.net/v1/dotnet-install.sh -o $HOME/Downloads/dotnet-install.sh
 chmod +x $HOME/Downloads/dotnet-install.sh
 "$HOME"/Downloads/dotnet-install.sh --channel 6.0
-"$HOME"/Downloads/dotnet-install.sh --channel 7.0
 "$HOME"/Downloads/dotnet-install.sh --channel 8.0
-"$HOME"/Downloads/dotnet-install.sh --channel 9.0
 "$HOME"/Downloads/dotnet-install.sh --channel 10.0
 
 # Configure .bashrc for DOTNET_ROOT and PATH
