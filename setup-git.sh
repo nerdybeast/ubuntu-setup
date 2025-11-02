@@ -6,16 +6,14 @@ set -e
 if ! command -v git &> /dev/null
 then
 	echo "⚠ Git is not installed. Installing git..."
-	sudo apt install -y git
+	sudo apt-get install -y git > /dev/null
 	echo "✅ Git has been successfully installed!"
 else
 	echo "✅ Git is already installed: $(git --version)"
 fi
 
-echo "⚙ Configuring Git global settings..."
-
 global_git_config_file="$HOME/.gitconfig"
-echo "Creating global git config: $global_git_config_file"
+# echo "Creating global git config: $global_git_config_file"
 touch $global_git_config_file
 
 git config --file $global_git_config_file user.name "Michael Penrod"
@@ -23,7 +21,7 @@ git config --file $global_git_config_file user.email "therealnerdybeast@gmail.co
 git config --file $global_git_config_file core.autocrlf false
 
 work_git_config_file="$HOME/projects/work/.gitconfig"
-echo "Creating work git config: $work_git_config_file"
+# echo "Creating work git config: $work_git_config_file"
 touch $work_git_config_file
 
 # Configure conditional includes for work directory
@@ -33,5 +31,4 @@ git config --file $global_git_config_file includeIf.gitdir:~/projects/work/.path
 # TODO: Need to update with work email
 git config --file $work_git_config_file user.email "your.email@company.com"
 
-echo ""
 echo "✅ Git has been successfully configured!"
